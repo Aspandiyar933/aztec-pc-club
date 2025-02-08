@@ -6,6 +6,7 @@ import { Moving } from "./moving";
 import { About } from "./about";
 import { Footer } from "./footer";
 import { ParallaxText } from "./ui/ParallaxText";
+import PricingSection from "./card";
 
 export function Hero() {
   return (
@@ -18,7 +19,7 @@ export function Hero() {
         {/* Container with adaptive padding and width */}
         <div className="container mx-auto px-4 sm:px-6 lg:px-16 py-12 sm:py-16">
           {/* ParallaxText section visible only on small+ screens */}
-          <section className="sm:block text-orange-500 mb-8">
+          <section className=" text-orange-500 mb-8">
             <ParallaxText
               baseVelocity={-5}
               className="text-gray-900 text-base sm:text-lg md:text-xl"
@@ -70,7 +71,7 @@ export function Hero() {
           {/* Secondary ParallaxText section:
               Visible on extra-small (xs) and large (lg+) devices;
               hidden on small (sm) devices */}
-          <section className="block text-orange-500 sm:hidden lg:block py-12">
+          <section className=" text-orange-500 py-12">
             <ParallaxText
               baseVelocity={-5}
               className="text-gray-900 text-base sm:text-lg md:text-xl"
@@ -120,89 +121,7 @@ export function Hero() {
           </section>
 
           {/* Pricing Section */}
-          <section className="py-6 md:py-12">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              {/* Section Header */}
-              <div className="text-center mb-6 md:mb-8">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 dark:text-white">
-                  ⁠Цены и тарифы
-                </h2>
-                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mt-2">
-                  Простые, прозрачные цены.
-                </p>
-              </div>
-
-              {/* Pricing Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-                {[
-                  {
-                    title: "Дневной",
-                    price: "₸ 500",
-                    period: "/ час",
-                    color: "text-indigo-600 dark:text-indigo-400",
-                  },
-                  {
-                    title: "Ночной",
-                    price: "₸ 450",
-                    period: "/ час",
-                    color: "text-green-700 dark:text-green-500",
-                  },
-                  {
-                    title: "Абонементы с бонусами",
-                    price: "10 часов",
-                    period: "/ 10% скидка",
-                    color: "text-purple-600 dark:text-purple-400",
-                  },
-                ].map((plan, index) => (
-                  <div
-                    key={index}
-                    className="bg-white dark:bg-gray-800 rounded-xl shadow p-6 flex flex-col justify-between"
-                  >
-                    <div>
-                      {/* Plan Title */}
-                      <h3
-                        className={`text-lg sm:text-xl font-semibold ${plan.color}`}
-                      >
-                        {plan.title}
-                      </h3>
-
-                      {/* Plan Price */}
-                      <div className="mt-4 flex items-baseline">
-                        <span className="text-3xl sm:text-4xl font-bold text-gray-800 dark:text-gray-200">
-                          {plan.price}
-                        </span>
-                        <span className="ml-2 text-sm sm:text-base text-gray-500 dark:text-gray-400">
-                          {plan.period}
-                        </span>
-                      </div>
-
-                      {/* Plan Features */}
-                      <ul className="mt-4 sm:mt-6 space-y-3 text-sm sm:text-base text-gray-700 dark:text-gray-300">
-                        <li className="flex items-start">
-                          <span className="text-yellow-500 mr-2 text-lg sm:text-xl">
-                            ✦
-                          </span>
-                          Кешбэк 20% на оплату.
-                        </li>
-                        <li className="flex items-start">
-                          <span className="text-yellow-500 mr-2 text-lg sm:text-xl">
-                            ✦
-                          </span>
-                          Скидка 50% на первый визит.
-                        </li>
-                        <li className="flex items-start">
-                          <span className="text-yellow-500 mr-2 text-lg sm:text-xl">
-                            ✦
-                          </span>
-                          Бонусный час в день рождения.
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
+          <PricingSection />
 
           {/* Call-to-Action Section */}
           <section className="flex items-center justify-center pb-10">
