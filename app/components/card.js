@@ -25,7 +25,7 @@ const pricingPlans = [
 export default function PricingSection() {
   return (
     // The "hidden sm:block" class hides this section on mobile screens.
-    <section className="py-6 md:py-12 hidden sm:block">
+    <section className="flex flex-col lg:flex-row items-center lg:items-start lg:justify-between py-6 md:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-6 md:mb-8">

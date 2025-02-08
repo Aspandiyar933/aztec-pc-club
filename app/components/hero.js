@@ -2,11 +2,10 @@
 import { motion } from "framer-motion";
 import { HeroHighlight, Highlight } from "./ui/hero-highlight";
 import { Navbar } from "./nav";
-import { Moving } from "./moving";
-import { About } from "./about";
 import { Footer } from "./footer";
 import { ParallaxText } from "./ui/ParallaxText";
 import PricingSection from "./card";
+import ParallaxScrollDemo from "./gallery";
 
 export function Hero() {
   return (
@@ -19,27 +18,14 @@ export function Hero() {
         {/* Container with adaptive padding and width */}
         <div className="container mx-auto px-4 sm:px-6 lg:px-16 py-12 sm:py-16">
           {/* ParallaxText section visible only on small+ screens */}
-          <section className=" text-orange-500 mb-8">
-            <ParallaxText
-              baseVelocity={-5}
-              className="text-gray-900 text-base sm:text-lg md:text-xl"
-            >
-              20 ПРОЦЕНТОВ СКИДКА НА 20 ЧАСОВ
-              <span className="hidden sm:inline">
-                {" "}
-                ЧТООООООООООООООООООООООО
-              </span>
-            </ParallaxText>
-          </section>
-
           {/* Navbar */}
           <Navbar />
 
           {/* Header Section */}
           <div className="flex flex-col lg:flex-row items-center lg:items-start lg:justify-between gap-6 my-8">
             {/* Text container with adaptive text alignment */}
-            <div id="1" className="max-w-lg space-y-4 text-center lg:text-left">
-              <h1 className="text-xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-yellow-300">
+            <div className="max-w-lg space-y-4 text-center lg:text-left">
+              <h1 className="text-7xl font-bold text-gray-900 dark:text-yellow-300">
                 Все условия для ваших{" "}
                 <Highlight className="text-black dark:text-white">
                   побед
@@ -71,19 +57,13 @@ export function Hero() {
           {/* Secondary ParallaxText section:
               Visible on extra-small (xs) and large (lg+) devices;
               hidden on small (sm) devices */}
-          <section className=" text-orange-500 py-12">
-            <ParallaxText
-              baseVelocity={-5}
-              className="text-gray-900 text-base sm:text-lg md:text-xl"
-            >
-              <span className="hidden sm:inline">
-                ОООООООООООООООООООООООOOOOOOOOOO
-              </span>
-            </ParallaxText>
-          </section>
 
-          {/* Gallery Section */}
-          <section className="max-w-7xl mx-auto px-4 py-10 md:py-20">
+          <div className="hidden md:block">
+            <ParallaxScrollDemo />
+          </div>
+
+          {/* Gallery Section for Mobile (visible on screens smaller than md) */}
+          <section className="max-w-7xl mx-auto px-4 py-10 md:py-20 block md:hidden">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
               {/* Gallery Image 1 */}
               <div className="flex justify-center">
@@ -123,6 +103,19 @@ export function Hero() {
           {/* Pricing Section */}
           <PricingSection />
 
+          <section className=" text-orange-500 mb-8">
+            <ParallaxText
+              baseVelocity={-5}
+              className="text-gray-900 text-base sm:text-lg md:text-xl"
+            >
+              20 ПРОЦЕНТОВ СКИДКА НА 20 ЧАСОВ
+              <span className="hidden sm:inline">
+                {" "}
+                ЧТООООООООООООООООООООООО
+              </span>
+            </ParallaxText>
+          </section>
+
           {/* Call-to-Action Section */}
           <section className="flex items-center justify-center pb-10">
             <a
@@ -132,7 +125,6 @@ export function Hero() {
               Забронировать
             </a>
           </section>
-
           {/* Footer */}
           <Footer />
         </div>
