@@ -24,39 +24,10 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-2">Контакты</h3>
             <p className="text-sm text-gray-300 flex items-center gap-2">
-              {/* Phone icon (placeholder) */}
-              <svg
-                className="w-4 h-4 text-blue-400"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3 5h2l.4 2M7 13l-1 9 2 2 12-2 2-2-1-9H7z"
-                />
-              </svg>
-              +7-706-606-xxxx
+              +7 778 826 5141
             </p>
             <p className="text-sm text-gray-300 mt-2 flex items-center gap-2">
               {/* Email icon (placeholder) */}
-              <svg
-                className="w-4 h-4 text-blue-400"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M16 2H8a2 2 0 00-2 2v16l6-3 6 3V4a2 2 0 00-2-2z"
-                />
-              </svg>
               <a
                 href="mailto:cybernationaztecs@gmail.com"
                 className="hover:text-blue-400"
